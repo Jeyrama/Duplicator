@@ -29,3 +29,19 @@ function duplicateEncode(word){
 }
 
 // or
+
+function countCharacters(chars) {
+  return chars
+    .reduce( function(memo, char){
+      memo[char] = memo[char] ? memo[char] + 1 : 1;
+      return memo;
+    }, {});
+}
+
+function duplicateEncode(word){
+  const chars = word.split('').map(ch => ch.toLowerCase());
+  const charsCount = countCharacters(chars);
+  return chars
+    .map( ch => charsCount[ch] > 1 ? ')' : '(' )
+    .join('');
+}
