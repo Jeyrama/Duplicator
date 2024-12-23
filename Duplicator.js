@@ -27,3 +27,5 @@ function duplicateEncode(word){
     })
     .join('');
 }
+
+// or
